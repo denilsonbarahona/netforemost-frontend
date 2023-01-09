@@ -1,10 +1,13 @@
 import React from "react";
+import { MainLayout } from "./entities/layouts";
+// import AddNotePage from "./entities/pages/add-note.page.componet";
+import ViewNotesPage from "./entities/pages/view.notes.page.component";
 
 function App() {
   return (
-    <div className="bg-blue-800">
-      <p>adad</p>
-    </div>
+    <MainLayout>
+      <ViewNotesPage />
+    </MainLayout>
   );
 }
 
