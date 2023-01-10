@@ -25,7 +25,7 @@ export class RepositoryAdapter implements IRepositoryAdapter {
 
   async getNote(id: string) {
     try {
-      return await this.api.get<INoteDTO[]>(`${API_URL}/notes/${id}`);
+      return await this.api.get<INoteDTO[]>(`${API_URL}notes/${id}`);
     } catch (error) {
       throw new Error((error as Error).message);
     }
@@ -33,7 +33,7 @@ export class RepositoryAdapter implements IRepositoryAdapter {
 
   async updateNote(id: string, payload: INoteDTO) {
     try {
-      await this.api.put<string, INoteDTO>(`${API_URL}/notes/${id}`, payload);
+      await this.api.put<string, INoteDTO>(`${API_URL}notes/${id}`, payload);
     } catch (error) {
       throw new Error((error as Error).message);
     }

@@ -1,14 +1,9 @@
 import React from "react";
-import { MainLayout } from "./entities/layouts";
-// import AddNotePage from "./entities/pages/add-note.page.componet";
-import ViewNotesPage from "./entities/pages/view.notes.page.component";
+
+import AppRoutes from "./router";
 
 function App() {
-  return (
-    <MainLayout>
-      <ViewNotesPage />
-    </MainLayout>
-  );
+  return <AppRoutes />;
 }
 
 export default App;

@@ -4,15 +4,21 @@ import {
   IValidate,
   IRepositoryAdapter,
   IValidator,
+  IWithSorting,
+  ISorting,
 } from "../../../types";
 
-export class Note implements INote, IValidate {
+export class Note implements INote, IValidate, IWithSorting {
   constructor(
     private repository: IRepositoryAdapter,
     private validator: IValidator
   ) {
     this.repository = repository;
     this.validator = validator;
+  }
+
+  sort<INoteDTO>(sorting: ISorting, payload: INoteDTO[], key: keyof INoteDTO) {
+    return sorting.sort(payload, key);
   }
 
   async validate<T extends object>(payload: T) {
