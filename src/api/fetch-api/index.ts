@@ -32,14 +32,22 @@ export class FetchApi implements IApi {
   }
 
   async delete<T>(url: string) {
-    return await ((await fetch(url, {
-      method: "DELETE",
-    }).then(async (response) => await response.json())) as Promise<T>);
+    try {
+      const data = await fetch(url, {
+        method: "DELETE",
+      });
+      return (await data.json()) as T;
+    } catch (error) {
+      throw new Error((error as Error).message);
+    }
   }
 
   async get<T>(url: string) {
-    return (await fetch(url).then(
-      async (response) => await response.json()
-    )) as T;
+    try {
+      const data = await fetch(url);
+      return (await data.json()) as T;
+    } catch (error) {
+      throw new Error((error as Error).message);
+    }
   }
 }

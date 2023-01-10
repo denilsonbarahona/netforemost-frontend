@@ -4,8 +4,11 @@ export const getHyphenDate = (date: Date | undefined) => {
   }
 
   if (typeof date === "string") {
-    return new Date(date).toJSON().slice(0, 10);
+    const newDate = new Date(date);
+    if (newDate instanceof Date && !isNaN(newDate.valueOf())) {
+      return newDate.toJSON().slice(0, 10);
+    }
   }
 
-  return date;
+  return "Invalid Date";
 };

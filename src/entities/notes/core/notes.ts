@@ -33,7 +33,7 @@ export class Note implements INote, IValidate, IWithSorting {
     const { isSuccess, message } = await this.validate<INoteDTO>(payload);
     if (isSuccess) {
       await this.repository.setNote(payload);
-      return { isSuccess, message };
+      return { isSuccess, message: "Note created" };
     }
     return { isSuccess, message };
   }
