@@ -1,7 +1,8 @@
 import { faker } from "@faker-js/faker";
+import { INoteDTO } from "../types";
 
 export const createNotes = (count: number) => {
-  const notes = [];
+  const notes: INoteDTO[] = [];
   for (let i = 0; i < count; i++) {
     notes.push({
       id: faker.datatype.uuid(),

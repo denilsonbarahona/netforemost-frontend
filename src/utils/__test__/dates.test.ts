@@ -15,7 +15,7 @@ describe("getHyphenDate", () => {
   });
 
   test("when sending a word should fail with invalid date", () => {
-    const result = getHyphenDate("word");
+    const result = getHyphenDate(new Date("word"));
     expect(result).toEqual("Invalid Date");
   });
 });

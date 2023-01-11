@@ -135,9 +135,9 @@ export const deleteNote = createAsyncThunk(
     const repository = new RepositoryAdapter(api);
     const note = new Note(repository, validator);
     try {
-      const response = await note.deleteNote(payload);
+      await note.deleteNote(payload);
       thunk.dispatch(getNotes());
-      return thunk.fulfillWithValue(response);
+      return thunk.fulfillWithValue({});
     } catch (error) {
       thunk.dispatch(
         showNotification({

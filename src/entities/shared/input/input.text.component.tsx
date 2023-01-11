@@ -12,6 +12,7 @@ const InputText: React.FC<{
       id={name}
       defaultValue={defaultValue}
       type="text"
+      aria-label={name}
       placeholder={placeholder}
     />
   );

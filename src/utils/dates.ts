@@ -1,5 +1,5 @@
 export const getHyphenDate = (date: Date | undefined) => {
-  if (date instanceof Date) {
+  if (date instanceof Date && !isNaN(date.valueOf())) {
     return date.toJSON().slice(0, 10);
   }
 

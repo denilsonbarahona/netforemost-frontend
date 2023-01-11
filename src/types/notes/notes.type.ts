@@ -9,7 +9,7 @@ export interface INote {
     id: string,
     payload: INoteDTO
   ) => Promise<{ isSuccess: boolean; message: string }>;
-  deleteNote: (id: string) => Promise<void>;
+  deleteNote: (id: string) => Promise<{ isSuccess: boolean; message: string }>;
 }
 
 export interface INoteDTO {

@@ -45,7 +45,7 @@ const EditNotePage: React.FC = () => {
         </button>
       </div>
       <div className="mt-10">
-        {note.length > 0 && (
+        {note?.length > 0 && (
           <FormNote onSubmit={handleSubmit} defaultValues={note[0]} />
         )}
       </div>

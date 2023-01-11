@@ -45,7 +45,7 @@ describe("fetch api implementation", () => {
 
   describe("throwing error 400", () => {
     beforeAll(() => {
-      fetchMock(400, { name: "test" });
+      fetchMock(400, { message: "Bad Request" });
     });
 
     test("get should throw error", async () => {
@@ -91,7 +91,7 @@ describe("fetch api implementation", () => {
 
   describe("throwing error 500", () => {
     beforeAll(() => {
-      fetchMock(500, { name: "test" });
+      fetchMock(500, { message: "Internal Server Error" });
     });
 
     test("get should throw error", async () => {

@@ -10,6 +10,7 @@ const InputTextarea: React.FC<{
       name={name}
       defaultValue={defaultValue}
       placeholder={placeholder}
+      aria-label={name}
       className="w-full min-h-[250px] border border-slate-200/60 rounded-md py-3 px-4"
     />
   );

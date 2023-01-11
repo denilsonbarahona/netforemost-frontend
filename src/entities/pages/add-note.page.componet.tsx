@@ -26,6 +26,7 @@ const AddNotePage: React.FC = () => {
         <button
           type="submit"
           form="formNote"
+          aria-label="Save Note"
           className="bg-blue-800 py-2 px-3 rounded-md text-white font-medium text-sm"
         >
           {notesLoading === "loading" ? "Saving..." : "Save Note"}

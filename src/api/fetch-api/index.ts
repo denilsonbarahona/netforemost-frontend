@@ -10,6 +10,9 @@ export class FetchApi implements IApi {
           "Content-Type": "application/json",
         },
       });
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
       return (await response.json()) as T;
     } catch (error) {
       throw new Error((error as Error).message);
@@ -25,6 +28,9 @@ export class FetchApi implements IApi {
           "Content-Type": "application/json",
         },
       });
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
       return (await response.json()) as T;
     } catch (error) {
       throw new Error((error as Error).message);
@@ -33,10 +39,13 @@ export class FetchApi implements IApi {
 
   async delete<T>(url: string) {
     try {
-      const data = await fetch(url, {
+      const response = await fetch(url, {
         method: "DELETE",
       });
-      return (await data.json()) as T;
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return (await response.json()) as T;
     } catch (error) {
       throw new Error((error as Error).message);
     }
@@ -44,8 +53,11 @@ export class FetchApi implements IApi {
 
   async get<T>(url: string) {
     try {
-      const data = await fetch(url);
-      return (await data.json()) as T;
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return (await response.json()) as T;
     } catch (error) {
       throw new Error((error as Error).message);
     }

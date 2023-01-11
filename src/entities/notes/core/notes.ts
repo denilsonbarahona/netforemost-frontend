@@ -50,12 +50,13 @@ export class Note implements INote, IValidate, IWithSorting {
     const { isSuccess, message } = await this.validate<INoteDTO>(payload);
     if (isSuccess) {
       await this.repository.updateNote(id, payload);
-      return { isSuccess, message };
+      return { isSuccess, message: "Note updated" };
     }
     return { isSuccess, message };
   }
 
   async deleteNote(id: string) {
     await this.repository.deleteNote(id);
+    return { isSuccess: true, message: "Note deleted" };
   }
 }

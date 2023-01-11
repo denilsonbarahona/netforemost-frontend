@@ -30,10 +30,12 @@ const FormNote: React.FC<{
     if (notesLoading === "loading") return;
     onSubmit(event);
   };
+
   return (
     <>
       {isVisible && <BannerNotification message={message} type={type} />}
       <form
+        aria-label="form"
         ref={formRef}
         onSubmit={handleSubmit}
         id="formNote"

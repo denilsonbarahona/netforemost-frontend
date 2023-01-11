@@ -13,6 +13,7 @@ const InputDate: React.FC<{
       type="date"
       defaultValue={defaultDate}
       autoComplete="on"
+      aria-label={name}
       className="py-3 px-4 h-11 rounded-md w-full border border-slate-200/60"
     />
   );
