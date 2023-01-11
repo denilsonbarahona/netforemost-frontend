@@ -1,11 +1,9 @@
 import React from "react";
 
+import AppRoutes from "./router";
+
 function App() {
-  return (
-    <div className="bg-blue-800">
-      <p>adad</p>
-    </div>
-  );
+  return <AppRoutes />;
 }
 
 export default App;
